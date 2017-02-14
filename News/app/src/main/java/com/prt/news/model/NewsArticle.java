@@ -2,55 +2,76 @@ package com.prt.news.model;
 
 import android.widget.ImageView;
 
+import java.io.Serializable;
+import java.util.Date;
+import java.util.UUID;
+
 /**
  * Created by prt on 2/14/2017.
  */
 
 public class NewsArticle
 {
-    private String title;
-    private String details;
-    private ImageView imageUrl;
-    private String time;
-    private String urlToArticle;
+    private String mImageUrl;
+    private String mTitle;
+    private String mTime;
+    private String mDetails;
+    private String mUrlToArticle;
+
+//    public NewsArticle(
+//            String imageUrl, String title, String time, String details, String urlToArticle) {
+//        this.mImageUrl = imageUrl;
+//        this.mTitle = title;
+//        this.mTime = time;
+//        this.mDetails = details;
+//        this.mUrlToArticle = urlToArticle;
+//    }
+
+    public NewsArticle(String title, String details, String imageUrl, String time, String urlToArticle) {
+        this.mTitle = title;
+        this.mDetails = details;
+        this.mImageUrl = imageUrl;
+        this.mTime = time;
+        this.mUrlToArticle = urlToArticle;
+    }
 
     public String getTitle() {
-        return title;
+        return mTitle;
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        this.mTitle = title;
     }
 
     public String getDetails() {
-        return details;
+        return mDetails;
     }
 
     public void setDetails(String details) {
-        this.details = details;
+        this.mDetails = details;
     }
 
-    public ImageView getImageUrl() {
-        return imageUrl;
+    public String getImageUrl() {
+        return mImageUrl;
     }
 
-    public void setImageUrl(ImageView imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setImageUrl(String imageUrl) {
+        this.mImageUrl = imageUrl;
     }
 
     public String getTime() {
-        return time;
+        return mTime;
     }
 
     public void setTime(String time) {
-        this.time = time;
+        this.mTime = time;
     }
 
     public String getUrlToArticle() {
-        return urlToArticle;
+        return mUrlToArticle;
     }
 
     public void setUrlToArticle(String urlToArticle) {
-        this.urlToArticle = urlToArticle;
+        this.mUrlToArticle = urlToArticle;
     }
 }
