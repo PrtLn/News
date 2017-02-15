@@ -1,31 +1,15 @@
 package com.prt.news.model;
 
-import android.widget.ImageView;
-
-import java.io.Serializable;
-import java.util.Date;
-import java.util.UUID;
-
 /**
  * Created by prt on 2/14/2017.
  */
 
-public class NewsArticle
-{
+public class NewsArticle {
     private String mImageUrl;
     private String mTitle;
     private String mTime;
     private String mDetails;
     private String mUrlToArticle;
-
-//    public NewsArticle(
-//            String imageUrl, String title, String time, String details, String urlToArticle) {
-//        this.mImageUrl = imageUrl;
-//        this.mTitle = title;
-//        this.mTime = time;
-//        this.mDetails = details;
-//        this.mUrlToArticle = urlToArticle;
-//    }
 
     public NewsArticle(String title, String details, String imageUrl, String time, String urlToArticle) {
         this.mTitle = title;
