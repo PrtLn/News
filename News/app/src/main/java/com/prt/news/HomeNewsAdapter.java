@@ -16,8 +16,7 @@ import java.util.List;
  * Created by prt on 2/14/2017.
  */
 
-public class HomeNewsAdapter extends RecyclerView.Adapter<HomeNewsAdapter.HomeNewsViewHolder>
-{
+public class HomeNewsAdapter extends RecyclerView.Adapter<HomeNewsAdapter.HomeNewsViewHolder> {
     private List<NewsArticle> mNewsArticles;
 
     public HomeNewsAdapter(List<NewsArticle> newsArticles) {
@@ -33,7 +32,7 @@ public class HomeNewsAdapter extends RecyclerView.Adapter<HomeNewsAdapter.HomeNe
     }
 
     @Override
-    public void onBindViewHolder(HomeNewsViewHolder holder, int position) {
+    public void onBindViewHolder(HomeNewsViewHolder holder, final int position) {
         NewsArticle newsArticle = mNewsArticles.get(position);
         Glide.with(holder.cardImageView.getContext())
                 .load(newsArticle.getImageUrl())
@@ -42,6 +41,13 @@ public class HomeNewsAdapter extends RecyclerView.Adapter<HomeNewsAdapter.HomeNe
         holder.cardTitleTextView.setText(newsArticle.getTitle());
         holder.cardTimeTextView.setText(newsArticle.getTime());
         holder.cardContentTextView.setText(newsArticle.getDetails());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NewsDetailsActivity.launch(v.getContext(), position);
+            }
+        });
     }
 
     @Override
@@ -49,8 +55,7 @@ public class HomeNewsAdapter extends RecyclerView.Adapter<HomeNewsAdapter.HomeNe
         return mNewsArticles.size();
     }
 
-    public static class HomeNewsViewHolder extends RecyclerView.ViewHolder
-    {
+    public static class HomeNewsViewHolder extends RecyclerView.ViewHolder {
         ImageView cardImageView;
         TextView cardTitleTextView;
         TextView cardTimeTextView;
